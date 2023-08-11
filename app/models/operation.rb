@@ -3,7 +3,9 @@ class Operation < ApplicationRecord
   has_and_belongs_to_many :groups
 
   validates :name, :amount, :author_id, :user_id, presence: true
-  validates :amount, numericality: { greater_than: 0, only_integer: true }
+  validates :amount, numericality: { greater_than: 0, only_integer: true, less_than: 100_000_000 }
+  validates :user_id, presence: true
+  validates :author_belongs_to_user
 
   private
 

@@ -15,40 +15,158 @@
   padding: 0;
 }
 
-.app_name {
+nav {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  min-height: 80vh;
-  margin: 0;
-}
-
-h1 {
-  font-size: 32px;
-}
-
-.button-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.button {
-  padding: 20px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  width: 90vw;
-}
-
-.blue-button {
+  padding: 1% 5%;
   background-color: var(--main-color);
+  min-height: 50px;
+  color: black;
+}
+
+main {
+  padding: 0 5%;
+  padding-bottom: 3%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 0;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+  padding: 1% 5%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 15px 0;
+  transition: 0.3s;
+}
+
+.transaction-card {
+  display: grid;
+  grid-template-columns: 5fr 4fr 1fr;
+  align-items: center;
+  padding: 3% 5%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 15px 0;
+  transition: 0.3s;
+}
+
+.total-banner {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  padding: 2% 5%;
+  background-color: rgb(211, 211, 211);
+  margin: 5px 0;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  min-width: 100px;
+  align-items: center;
+}
+
+.cat-total {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  margin: 10px;
+}
+
+.cat-image {
+  display: flex;
+  margin-right: 15%;
+  height: 48px;
+  width: 48px;
+}
+
+.green-btn {
+  height: 60px;
+  width: 100%;
+  border: 1px solid white;
+  cursor: pointer;
+  background-color: var(--second-color);
+  font-family: 'proxima-nova', sans-serif;
   color: white;
 }
 
-.white-button {
-  background-color: white;
-  color: var(--grey-2);
+.blue-btn {
+  height: 60px;
+  width: 100%;
+  border: 1px solid white;
+  cursor: pointer;
+  background-color: var(--main-color);
+  font-family: 'proxima-nova', sans-serif;
+  color: white;
+}
+
+.del-btn {
+  padding: 5px 15px;
+  background-color: red;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.green-btn a {
+  color: white;
+}
+
+.blue-btn a {
+  color: white;
+}
+
+.thin-btn {
+  height: 30px;
+  min-width: 180px;
+}
+
+.banner {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 6fr 2fr;
+  padding: 1% 5%;
+  margin-bottom: 15px;
+}
+
+.hover {
+  cursor: pointer;
+}
+
+.hover:hover {
+  transform: scale(1.05);
+}
+
+.app-name {
+  color: var(--main-color);
+  align-self: center;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10%;
+}
+
+.form-field {
+  border: none;
+  border-bottom: rgb(211, 211, 211) solid 0.5px;
+  width: 100%;
 }

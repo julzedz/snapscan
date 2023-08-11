@@ -7,20 +7,29 @@ class OperationsController < ApplicationController
     @total_amount = @operations.sum(:amount)
   end
 
-  def create
-    @operations = current_user.item.new(item_params)
+  def new
+    @group = Group.find(params[:group_id])
+    @operations = Operation.new
+  end
 
-    if @operations.save
-      redirect_to group_operations_path, notice: 'Transaction was successfully created.'
+  def create
+    @group = Group.find(params[:group_id])
+    @operations = @group.operations.build(operation_params)
+
+    @operation.user_id = current_user.id
+    @operation.author_id = current_user.id
+
+    if @operation.save
+      redirect_to group_operations_path(@group), notice: 'Transaction was successfully created.'
     else
       render :new, alert: 'Failed to add transaction'
     end
   end
 
   def destroy
-    @operations = Item.find(params[:id])
+    @operation = Operation.find(params[:id])
 
-    if @operations.destroy
+    if @operation.destroy
       redirect_to group_operations_path, notice: 'Transaction was successfully destroyed.'
     else
       render :index, alert: 'Failed to remove transaction'
@@ -30,10 +39,10 @@ class OperationsController < ApplicationController
   private
 
   def set_operation
-    @item = Item.find(params[:id])
+    @item = Operation.find(params[:id])
   end
 
   def operation_params
-    params.permit(:name, :amount, :group_id)
+    params.require(:operation).permit(:name, :amount, :group_id)
   end
 end

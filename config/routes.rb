@@ -1,16 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root "groups#index"
-
-  resources :users do
-    resources :groups
-    resources :operations
+  devise_scope :user do  
+    get '/users/sign_out' => 'devise/sessions#destroy'     
   end
 
-  resources :groups do
-    resources :operations
-  end
+  root "users#index"
+  resources :users, only: %i[index]
 
-  resources :operations
+  resources :groups, only: %i[index new create show destroy update] do
+    resources :operations, only: %i[index new create destroy update]
+  end
 end

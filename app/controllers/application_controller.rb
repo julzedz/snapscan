@@ -1,11 +1,11 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery with: :exception, unless: -> { request.format.json? }
+  protect_from_forgery prepend: true
   before_action :authenticate_user!
   before_action :update_allowed_parameters, if: :devise_controller?
 
-  rescue_from CanCan::AccessDenied do |exception|
-    redirect_to root_url, alert: exception.message
-  end
+  # rescue_from CanCan::AccessDenied do |exception|
+  #   redirect_to root_url, alert: exception.message
+  # end
 
   protected
 

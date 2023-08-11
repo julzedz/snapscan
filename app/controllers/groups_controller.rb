@@ -1,6 +1,7 @@
 class GroupsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   before_action :set_group, only: %i[show update destroy]
+  layout :determine_layout
 
   def index
     @user = current_user
@@ -13,13 +14,13 @@ class GroupsController < ApplicationController
     if add_group.save
       redirect_to groups_path, notice: 'Category was successfully created'
     else
-      render :new, status: :unprocessable_entity, alert: 'Failed to create category'
+      render :new, alert: 'Failed to create category'
     end
   end
 
   def update
     @group = Group.find(params[:id])
-    if group.update(group_params)
+    if @group.update(group_params)
       redirect_to groups_path, notice: 'Category was successfully updated'
     else
       render :edit, alert: 'Failed to update category'
@@ -41,6 +42,10 @@ class GroupsController < ApplicationController
 
   def set_group
     @group = Group.find(params[:id])
+  end
+
+  def determine_layout
+    user_signed_in? ? 'application' : 'unauthenticated'
   end
 
   def group_params

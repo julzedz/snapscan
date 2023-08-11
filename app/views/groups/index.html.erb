@@ -1,6 +1,5 @@
 <main class="splash_screen">
 <div class="app_name">  
-<% if user_signed_in? %>
 <%= button_to "Sign out", destroy_user_session_path, :method => :delete, class:"del-btn" %>
 <nav>
   <%= link_to image_tag("https://img.icons8.com/sf-regular/48/ffffff/exit.png"), destroy_user_session_path, :method => :delete %>
@@ -18,7 +17,7 @@
                 <%= image_tag category.icon rescue image_tag 'https://img.icons8.com/officel/48/000000/box.png'%>
               </div>
               <div>
-                <h2><%= link_to category.name, group_items_path(group_id: category.user_id, class: 'text') %></h2>
+                <h2><%= link_to category.name, group_operations_path(group_id: category.id, class: 'text') %></h2>
                 <br/>
                 <hr />
                 <br/>
@@ -26,9 +25,9 @@
               </div>
             </div>
             <div class="cat-total">
-              <p>$<%= Item.where(group_id: category.user_id).reduce(0) { |sum, t| sum + t.amount } %></p>
+              <p>$<%= Operation.where(group_id: category.id).sum (:amount) %></p>
               <br/>
-              <%= button_to 'Delete'.html_safe, group_path(id: category.user_id), method: :delete, class: 'del-btn' %>
+              <%= button_to 'Delete', group_path(id: category.id), method: :delete, class: 'del-btn' %>
             </div>
         </div>
     <% end %>
@@ -37,12 +36,4 @@
     <%= link_to 'Add a new category', new_group_path %>
   </button>
 </main>
-<%else%>
-<h1>Snapscan</h1>
-</div>  
-  <div class="button-container">
-  <%= button_to "LOG IN", new_user_session_path, class:'button blue-button' %>
-    <%= button_to "SIGN UP", new_user_registration_path, class:'button white-button' %>
-    <% end %>
-    </div>
 </main>
