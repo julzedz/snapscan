@@ -15,4 +15,10 @@ class ApplicationController < ActionController::Base
     end
     devise_parameter_sanitizer.permit(:sign_in) { |u| u.permit(:email, :password) }
   end
+
+  private
+
+  def after_sign_in_path_for(_resource)
+    groups_path # Redirect to groups index after sign-in
+  end
 end
