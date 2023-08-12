@@ -2,7 +2,7 @@
 <div class="app_name">  
 <nav>
   <%= link_to image_tag("https://img.icons8.com/sf-regular/48/ffffff/exit.png"), destroy_user_session_path, :method => :delete %>
-  <h1 class="color-white">CATEGORIES</h1>
+  <h1 class="categories">CATEGORIES</h1>
   <img src="https://img.icons8.com/sf-black/48/ffffff/search.png"/>
 </nav>
 <main>
@@ -13,7 +13,7 @@
         <div class="card hover">
           <div class="flex-row">
               <div class="cat-image">
-                <%= image_tag category.icon rescue image_tag 'https://img.icons8.com/officel/48/000000/box.png'%>
+                <%= image_tag category.icon rescue image_tag('https://img.icons8.com/officel/48/000000/box.png', alt: "Category Icon") %>
               </div>
               <div>
                 <h2><%= link_to category.name, group_operations_path(group_id: category.id, class: 'text') %></h2>

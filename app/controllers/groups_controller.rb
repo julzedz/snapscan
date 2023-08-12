@@ -3,7 +3,7 @@ class GroupsController < ApplicationController
 
   def index
     @user = current_user
-    @groups = @user.groups.includes(:operations).order(id: :desc)
+    @groups = @user.groups.includes(:operations).order(id: :desc).where(author_id: current_user.id)
   end
 
   def create

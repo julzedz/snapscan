@@ -13,6 +13,8 @@ gem 'letter_opener'
 
 gem 'cancancan'
 
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
+
 gem 'rails', '~> 7.0.6'
 
 gem 'sprockets-rails'
@@ -35,6 +37,7 @@ gem 'bootsnap', require: false
 
 group :development, :test do
   gem 'debug', platforms: %i[mri mingw x64_mingw]
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -43,7 +46,6 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'rspec-rails'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
