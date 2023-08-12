@@ -2,7 +2,7 @@
   <div>
     <%= link_to image_tag("https://img.icons8.com/ios-filled/48/ffffff/long-arrow-left.png"), groups_path, class: "btn"  %>
   </div>
-  <h1>TRANSACTIONS</h1>
+  <h1 class="color-white">TRANSACTIONS</h1>
   <img src="https://img.icons8.com/sf-black/48/ffffff/search.png"/>
 </nav>
 <p class="notice"><%= notice %></p>
@@ -29,7 +29,9 @@
         <li class="transaction-card hover">
           <a><h2><%= payment.name %></h2></a>
           <a>$<%= payment.amount %></a>
-          <%= button_to "Delete", group_operation_path(user_id: payment.user.id, group_id: payment.group.id, id: payment.id), method: :delete, class: "del-btn"  %>
+          <%= link_to group_operation_path(user_id: payment.user.id, group_id: payment.group.id, id: payment.id), method: :delete, class: "del-btn", data: { confirm: "Are you sure you want to delete this payment?" } do %>
+          <i class="fas fa-trash"></i> <!-- FontAwesome trash icon -->
+          <% end %>
         </li>
           <% end %>
         </ul>

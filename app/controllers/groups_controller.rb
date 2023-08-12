@@ -1,11 +1,9 @@
 class GroupsController < ApplicationController
-  skip_before_action :authenticate_user!, only: :index
   before_action :set_group, only: %i[show update destroy]
-  layout :determine_layout
 
   def index
     @user = current_user
-    @groups = current_user.groups.includes(:operations).order(id: :desc)
+    @groups = @user.groups.includes(:operations).order(id: :desc)
   end
 
   def create
