@@ -1,29 +1,15 @@
-<nav>
-  <img src="https://img.icons8.com/material-outlined/48/ffffff/menu--v1.png"/>
-  <h1>Snapscan</h1>
-  <img src="https://img.icons8.com/sf-black/48/ffffff/search.png"/>
-</nav>
-<main>
-  <div class="center">
-    <h1 class="app-name">Snapscan</h1>
-    <br/>
-    <br/>
-    <% if user_signed_in? %>
-        <h4> Successfully signed in, welcome!</h4>
-        <br/>
+<main class="splash-screen">
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>  
+<div class="app-name">
+    <h1>Snapscan</h1>
+  </div>  
+      <div class="buttons-container">
         <button class="blue-btn">
-          <%= link_to('Go to My Categories', "/groups") %>
+          <%= link_to('LOG IN', "/users/sign_in") %>
         </button>
-        <br/>
-        <br/>
-        <%= button_to "Sign out", destroy_user_session_path, :method => :delete, class:"del-btn" %>
-      <%else%>
-        <button class="green-btn">
-          <%= link_to('Sign in', "/users/sign_in") %>
+        <button class="white-btn">
+          <%= link_to('SIGN UP', "/users/sign_up") %>
         </button>
-        <button class="blue-btn">
-          <%= link_to('Sign up', "/users/sign_up") %>
-        </button>
-    <% end %>
-  </div>
+        </div>
 </main>
