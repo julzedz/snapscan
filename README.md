@@ -1,7 +1,10 @@
 <a name="readme-top"></a>
+
 <!-- TABLE OF CONTENTS -->
+
  Snapscan
-- [📗 Table of Contents](#-table-of-contents)
+ 
+ - [📗 Table of Contents](#-table-of-contents)
 - [📖 Snapscan ](#-snapscan-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
@@ -21,15 +24,24 @@
   - [🙏 Acknowledgments ](#-acknowledgments-)
   - [❓ FAQ ](#-faq-)
   - [📝 License ](#-license-)
+    
 <!-- PROJECT DESCRIPTION -->
+
 # 📖 Snapscan <a name="about-project"></a>
+
+
 A mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
+
+
 <div align="center">
   <img src="./app/assets/images/diagram.png" alt="logo" />
   <br/>
 </div>
+
+
 ## 🛠 Built With <a name="built-with"></a>
 ### Tech Stack <a name="tech-stack"></a>
+
 <details>
   <summary>Server Side</summary>
   <ul>
@@ -38,13 +50,17 @@ A mobile web application where you can manage your budget: you have a list of tr
     <li><a href="https://www.w3.org/Style/CSS/Overview.en.html">CSS</a></li>
   </ul>
 </details>
+
 <details>
 <summary>Database</summary>
   <ul>
     <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
   </ul>
+ 
 </details>
+
 <!-- Features -->
+
 ### Key Features <a name="key-features"></a>
 - **Splash Screen**
 - **Sign up and log in pages**
@@ -94,37 +110,59 @@ To run tests, run the following command:
 ```sh
   rspec spec
 ```
+
 ### Deployment
+
 You can deploy this project using:
+
  <a href="https://render.com/">Visit Render</a>
   
   by following the docs instructions
+
+  
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## 👥 Author <a name="authors"></a>
+
 👤 **Jules Edozie**
+
 - GitHub: [@githubhandle](https://github.com/julzedz)
 - Twitter: [@twitterhandle](https://twitter.com/julzedz)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/julesedozie/ )
+
 ## 🔭 Future Features <a name="future-features"></a>
+
 - **Will add details**
 - **will add payment feature**
 - **will add sidebar**
+  
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## 🤝 Contributing <a name="contributing"></a>
+
 Contributions, issues, and feature requests are welcome!
 Feel free to check the [issues page](https://github.com/julzedz/snapscan/issues).
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## ⭐️ Show your support <a name="support"></a>
+
 Please ⭐️ this repository if you found the project useful.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
 I would like to thank Gregoire Vella for this amazing design.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## ❓ FAQ <a name="faq"></a>
+
 > Add at least 2 questions new developers would ask when they decide to use your project.
 - **could you deploy this project in any other language?**
   - Yes, I can deploy this project using any other back end language
+  
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ## 📝 License <a name="license"></a>
 This project is [MIT](./LICENSE) licensed.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
