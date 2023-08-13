@@ -9,18 +9,17 @@ class OperationsController < ApplicationController
 
   def new
     @group = Group.find(params[:group_id])
-    @operations = Operation.new
+    @operation = Operation.new
   end
 
   def create
     @group = Group.find(params[:group_id])
-    @operations = @group.operations.build(operation_params)
-
-    @operation.user_id = current_user.id
+    @operation = Operation.new(operation_params)
+    @operation.group_id = @group.id
     @operation.author_id = current_user.id
 
     if @operation.save
-      redirect_to group_operations_path(@group), notice: 'Transaction was successfully created.'
+      redirect_to group_path(@group), notice: 'Transaction was successfully created.'
     else
       render :new, alert: 'Failed to add transaction'
     end
@@ -43,6 +42,6 @@ class OperationsController < ApplicationController
   end
 
   def operation_params
-    params.require(:operation).permit(:name, :amount, :group_id)
+    params.require(:operation).permit(:name, :amount)
   end
 end

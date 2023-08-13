@@ -3,11 +3,12 @@ class GroupsController < ApplicationController
 
   def index
     @user = current_user
-    @groups = @user.groups.includes(:operations).order(id: :desc).where(author_id: current_user.id)
+    @groups = Group.all.where(author_id: current_user.id)
   end
 
   def create
-    add_group = current_user.groups.new(group_params)
+    add_group = Group.new(group_params)
+    add_group.author_id = current_user.id
 
     if add_group.save
       redirect_to groups_path, notice: 'Category was successfully created'
@@ -25,8 +26,14 @@ class GroupsController < ApplicationController
     end
   end
 
+  # GET /categories/1 or /categories/1.json
+  def show
+    @group = Group.find(params[:id])
+    @operations = Operation.where(group_id: @group.id).order(id: :desc)
+    @total_amount = @operations.sum(:amount)
+  end
+
   def destroy
-    @user = current_user
     @group = Group.find(params[:id])
 
     if @group.destroy

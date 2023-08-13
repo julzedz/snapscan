@@ -16,7 +16,7 @@
                 <%= image_tag category.icon rescue image_tag('https://img.icons8.com/officel/48/000000/box.png', alt: "Category Icon") %>
               </div>
               <div>
-                <h2><%= link_to category.name, group_operations_path(group_id: category.id, class: 'text') %></h2>
+                <h2><%= link_to category.name, group_path(id: category.id) %></h2>
                 <br/>
                 <hr />
                 <br/>
