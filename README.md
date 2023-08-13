@@ -33,11 +33,6 @@
 A mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
 
 
-<div align="center">
-  <img src="./app/assets/images/diagram.png" alt="logo" />
-  <br/>
-</div>
-
 
 ## 🛠 Built With <a name="built-with"></a>
 ### Tech Stack <a name="tech-stack"></a>
