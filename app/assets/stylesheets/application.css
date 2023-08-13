@@ -1,15 +1,306 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+@import url("https://fonts.googleapis.com/css2?family=Proxima+Nova");
+
+:root {
+  --main-color: #3778c2;
+  --second-color: #5fb523;
+  --grey-1: #434b54;
+  --grey-2: #5e636e;
+  --grey-3: #8f96a3;
+}
+
+* {
+  font-family: "proxima-nova", sans-serif;
+  color: var(--grey-1);
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(241, 241, 241);
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1% 5%;
+  background-color: var(--main-color);
+  min-height: 50px;
+  color: black;
+  position: relative;
+}
+
+.color-white {
+  color: white;
+}
+
+.categories {
+  color: white;
+}
+
+.invisible {
+  color: transparent;
+}
+
+a {
+  text-decoration: none;
+}
+
+#user_email {
+  width: 100%;
+  height: 50px;
+  border: none;
+  background-color: white;
+  color: var(--grey-2);
+  padding: 0 16px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+#user_name {
+  width: 100%;
+  height: 50px;
+  border: none;
+  background-color: white;
+  color: var(--grey-2);
+  padding: 0 16px;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+#user_password {
+  width: 100%;
+  height: 50px;
+  border: none;
+  background-color: white;
+  color: var(--grey-2);
+  padding: 0 16px;
+  font-size: 20px;
+}
+
+#user_password_confirmation {
+  width: 100%;
+  height: 50px;
+  border: none;
+  background-color: white;
+  color: var(--grey-2);
+  padding: 0 16px;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.login-page input {
+  position: absolute;
+  right: 8px;
+  top: 16px;
+  font-size: 21px;
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+.signup-page input {
+  position: absolute;
+  right: 8px;
+  top: 16px;
+  font-size: 21px;
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+
+.forgot-password {
+  text-align: center;
+  margin-top: 26px;
+  font-size: 20px;
+  color: var(--grey-2);
+}
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 0;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 9fr 1fr;
+  padding: 1% 5%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 15px 0;
+  transition: 0.3s;
+}
+
+.transaction-card {
+  display: grid;
+  grid-template-columns: 5fr 4fr 1fr;
+  align-items: center;
+  padding: 3% 5%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 15px 0;
+  transition: 0.3s;
+}
+
+.total-banner {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  padding: 2% 5%;
+  background-color: rgb(211, 211, 211);
+  margin: 5px 0;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  min-width: 100px;
+  align-items: center;
+}
+
+.cat-total {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  margin: 10px;
+}
+
+.cat-image {
+  display: flex;
+  margin-right: 15%;
+  height: 48px;
+  width: 48px;
+}
+
+.splash-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.green-btn {
+  height: 60px;
+  width: 100%;
+  outline-offset: 10px;
+  border: 9px double #ebe7e7;
+  border: 1px solid white;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 10px 10px;
+  background-color: var(--second-color);
+  font-family: 'proxima-nova', sans-serif;
+  color: white;
+}
+
+.blue-btn {
+  height: 60px;
+  width: 95vw;
+  border: 1px solid white;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: var(--main-color);
+  font-family: 'proxima-nova', sans-serif;
+  color: white;
+}
+
+.white-btn {
+  height: 60px;
+  width: 95vw;
+  cursor: pointer;
+  background-color: white;
+  border: none;
+  font-family: 'proxima-nova', sans-serif;
+  color: var(--grey-2);
+}
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.del-btn {
+  padding: 5px 15px;
+  background-color: red;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.green-btn a {
+  color: white;
+}
+
+.blue-btn a {
+  color: white;
+}
+
+.thin-btn {
+  height: 30px;
+  min-width: 180px;
+}
+
+.banner {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 6fr 2fr;
+  padding: 1% 5%;
+  margin-bottom: 15px;
+}
+
+.hover {
+  cursor: pointer;
+}
+
+.hover:hover {
+  transform: scale(1.05);
+}
+
+.app-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10%;
+}
+
+.form-field {
+  border: none;
+  border-bottom: rgb(211, 211, 211) solid 0.5px;
+  width: 100%;
+}
+
+#icon {
+  width: 95vw;
+  height: 40px;
+}
+
+#name {
+  width: 95vw;
+  height: 40px;
+}
+
+#entity_name {
+  width: 95vw;
+  height: 40px;
+}
+
+#entity_amount {
+  width: 95vw;
+  height: 40px;
+}
