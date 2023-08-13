@@ -73,7 +73,7 @@ A mobile web application where you can manage your budget: you have a list of tr
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 - <a href="https://snapscan-89o4.onrender.com/">Live Demo</a>
-- [Video Presentation]()
+- [Video Presentation](https://www.loom.com/share/a5387e7ca63342988e5defaa5607dd94?sid=55bafea5-ea2f-4bec-ac24-3ee12e540bb7)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
